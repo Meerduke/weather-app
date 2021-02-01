@@ -51,7 +51,6 @@ footer {
   text-align: center;
   margin: 50px 0 20px 0;
   color: grey;
-  text-decoration: none;
 }
 
 .current-weather {
@@ -81,6 +80,10 @@ footer {
   left: 80px;
   font-size: 20px;
   margin: 20px;
+}
+
+.open-source-link {
+  text-decoration: none;
 }
 
 #current-icon {
