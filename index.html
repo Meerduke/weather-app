@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Weather</title>
+    <script src="https://kit.fontawesome.com/5e0b1632bb.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300&family=Bebas+Neue&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+    <div class="container">
+
+        <h1>
+            Weather Forecast
+        </h1>
+
+        <h2>
+                Current weather in 
+                <span id="current-city">Reykjavik</span>
+        </h2>
+        
+        <p class="current-weather">
+            <span id="celsius-button">
+                4°C
+            </span>
+            |
+            <span id="fahrenheit-button">
+                °F
+            </span>
+        </p>
+
+        <p id="current-icon">
+                <i class="fas fa-cloud-rain"></i>
+        </p>
+
+        <ul>
+            <li class="current-date-time">
+            </li>
+            <li>
+                Humidity: <span id="humidity">77</span>%,
+            
+                Wind: <span id="wind">17</span>kmph
+            </li>
+        </ul>
+        <p>
+            <div class="forecast">
+             <div class="row"> 
+                <div class="col 1 empty">
+                </div>
+                <div class="col-2 monday">
+                    Monday
+                    <br />
+                    <i class="fas fa-cloud"></i>
+                    <br />
+                    <span id="first-day">
+                        4°C | -2°C
+                    </span>
+                </div>
+                <div class="col-2 tuesday">
+                    Tuesday
+                    <br />
+                    <i class="far fa-snowflake"></i>
+                    <br />
+                    <span id="second-day">
+                        0°C | -3°C
+                    </span>
+                </div>
+                <div class="col-2 wednesday">
+                    Wednesday
+                    <br />
+                    <i class="fas fa-cloud-sun"></i>
+                    <br />
+                    <span id="third-day">
+                        -1°C | -2°C
+                    </span>
+                </div>
+                <div class="col-2 thursday">
+                    Thursday
+                    <br />
+                    <i class="fas fa-cloud"></i>
+                    <br />
+                    <span id="fourth-day">
+                        2°C | -1°C
+                    </span>
+                </div>
+                <div class="col-2 friday">
+                    Friday
+                    <br />
+                    <i class="fas fa-cloud-rain"></i>
+                    <br />
+                    <span id="fifth-day">
+                        1°C | -4°C
+                    </span>
+                </div>
+                <div class="col-1 empty">
+                </div>
+             </div>
+            </div>
+        </p>
+
+        <hr />
+
+         <form id="search-form">
+            <div class="row change-location">
+                <div class="col-auto">
+                    <label for="change-city" class="col-form-label">Change your location</label>
+                </div>
+                <div class="col-auto">
+                    <input 
+                    type="text"
+                    class="form-control"
+                    id="search-text-input"
+                    placeholder="Enter city"
+                    autocomplete="off"
+                    autofocus="on">
+                </div>
+                <div class="col-auto search-button">
+                    <input
+                    type="submit"
+                    class="btn btn-info w-100"
+                    value="Search"
+                    >
+                </div>
+                <div class="col-auto">
+                    <input type="submit" class="btn btn-info w-100" id="current-button" value="Current Location">
+                </div>
+            </div>
+        </form>
+       
+        <footer>
+            Page coded by Becca Murdoch
+        </footer>
+
+    </div>
+    <script src="src/index.js"></script>
+</body>
+</html>
