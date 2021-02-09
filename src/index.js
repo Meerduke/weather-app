@@ -14,14 +14,22 @@ function showTemperature(response){
   icon.setAttribute("alt", response.data.weather[0].description);
 }
 
+function search(city) {
+  let apiKey = "aae79086babd8e5274d8186968279eae";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showTemperature);
+}
 
-let apiKey = "aae79086babd8e5274d8186968279eae";
-let city = "Berlin";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-let form = document.querySelector("#search-text-input")
-form.addEventListener("click", showTemperature);
+function handleSubmit(event){
+  event.preventDefault();
+  let cityInput = document.querySelector("#search-text-input");
+  search(cityInput.value);
+}
 
-axios.get(apiUrl).then(showTemperature);
+search("Berlin");
+
+let form = document.querySelector("#search-form")
+form.addEventListener("submit", handleSubmit);
 
 
 let now = new Date();
