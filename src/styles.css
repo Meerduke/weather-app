@@ -94,6 +94,10 @@ footer {
   right: 90px;
 }
 
+#condition-description {
+  text-transform: capitalize;
+}
+
 #search-form {
   margin: 0 0 0 -90px;
 }
