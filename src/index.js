@@ -26,11 +26,34 @@ function handleSubmit(event){
   search(cityInput.value);
 }
 
-search("Berlin");
+function showCity(response) {
+  search(response.data.list[0].name);
+}
 
-let form = document.querySelector("#search-form")
+function showPosition (position) {
+  console.log(position.coords.latitude);
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let cityCount = 1;
+  let apiKey = "aae79086babd8e5274d8186968279eae";
+  let currentCityUrl = `https://api.openweathermap.org/data/2.5/find?lat=${lat}&lon=${lon}&cnt=${cityCount}&appid=${apiKey}&units=metric`;
+  console.log(currentCityUrl);
+  axios.get(currentCityUrl).then(showCity);
+}
+
+function getCurrentLocation(event) {
+  event.preventDefault();
+  console.log(navigator);
+  navigator.geolocation.getCurrentPosition(showPosition);
+}
+
+let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
+let currentLocationButton = document.querySelector("#current-button");
+currentLocationButton.addEventListener("click", getCurrentLocation);
+
+search("Berlin");
 
 let now = new Date();
 let days = [
