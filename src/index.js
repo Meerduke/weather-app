@@ -16,7 +16,7 @@ function showTemperature(response){
 
 
 let apiKey = "aae79086babd8e5274d8186968279eae";
-let city = "Paris";
+let city = "Berlin";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 let form = document.querySelector("#search-text-input")
 form.addEventListener("click", showTemperature);

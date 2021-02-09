@@ -30,8 +30,8 @@ ul {
   list-style: none;
   text-align: center;
   position: relative;
-  top: -60px;
-  right: -200px;
+  top: -100px;
+  right: -190px;
   margin: 30px;
   font-size: 15px;
 }
@@ -65,7 +65,7 @@ footer {
 
 .forecast {
   position: relative;
-  top: -50px;
+  top: -80px;
   border: 1px solid rgba(0, 88, 122, 1);
   padding: 20px;
   font-size: 20px;
@@ -90,8 +90,8 @@ footer {
   text-align: right;
   font-size: 48px;
   position: relative;
-  top: -50px;
-  right: 90px;
+  top: -70px;
+  left: 480px;
 }
 
 #condition-description {
