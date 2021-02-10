@@ -1,17 +1,19 @@
 function showTemperature(response){
   let celsius = document.querySelector(".temperature")
-  celsius.innerHTML = Math.round(response.data.main.temp);
   let currentCity = document.querySelector("#current-city");
-  currentCity.innerHTML = response.data.name;
   let description = document.querySelector("#condition-description");
-  description.innerHTML = response.data.weather[0].description;
   let wind = document.querySelector("#wind");
-  wind.innerHTML = Math.round(response.data.wind.speed);
   let humidity = document.querySelector("#humidity");
-  humidity.innerHTML = response.data.main.humidity;
   let icon = document.querySelector("#current-icon");
+
+  celsius.innerHTML = Math.round(response.data.main.temp);
+  currentCity.innerHTML = response.data.name;
+  description.innerHTML = response.data.weather[0].description;
+  wind.innerHTML = Math.round(response.data.wind.speed);
+  humidity.innerHTML = response.data.main.humidity;
   icon.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   icon.setAttribute("alt", response.data.weather[0].description);
+
   celsiusTemperature = response.data.main.temp;
 }
 
@@ -107,7 +109,7 @@ let minutes = now.getMinutes();
     minutes = `0${minutes}`;
   }
 let changeDate = document.querySelector(".current-date-time");
-changeDate.innerHTML = `${day} ${date} ${month}, ${hours}:${minutes}`;
+changeDate.innerHTML = `${day} ${date} ${month} ${hours}:${minutes}`;
 
 
 search("Berlin");

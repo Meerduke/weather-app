@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,7 @@
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="src/styles.css">
 </head>
+
 <body>
     <div class="container">
 
@@ -21,43 +23,34 @@
         </h1>
 
         <h2>
-                Current weather in 
-                <span id="current-city"></span>
+            Current weather in
+            <span id="current-city"></span>
         </h2>
-        
-        <div class = "row">
-            <span class = "temperature"></span>
-            <span class = "units">
-                <a href="#" id="celsius-button">°C</a> | 
+
+        <div class="row" id="current-temperature">
+            <span class="units">
+                <strong class="temperature"></strong>
+                <a href="#" id="celsius-button" class="active">°C</a> |
                 <a href="#" id="fahrenheit-button">°F</a>
             </span>
-
-
         </div>
-    
 
-        <p>
-            <img
-            src="" 
-            alt=""
-            id="current-icon"
-            />
-        </p>
+        <ul id = "current-icon-date">
+            <li><img src="" alt="" id="current-icon" /></li>
+            <li class="current-date-time"></li>
+        </ul>
 
-        <ul>
+
+        <ul id = "weather-conditions">
             <li id="condition-description"></li>
-            <li class="current-date-time">
-            </li>
             <li>
-                Humidity: <span id="humidity"></span>% 
-            
+                Humidity: <span id="humidity"></span>%
                 Wind: <span id="wind"></span> Km/H
-
             </li>
         </ul>
-        <p>
-            <div class="forecast">
-             <div class="row"> 
+
+        <div class="forecast">
+            <div class="row">
                 <div class="col 1 empty">
                 </div>
                 <div class="col-2 monday">
@@ -107,45 +100,37 @@
                 </div>
                 <div class="col-1 empty">
                 </div>
-             </div>
             </div>
-        </p>
+        </div>
 
         <hr />
 
-         <form id="search-form">
+        <form id="search-form">
             <div class="row change-location">
                 <div class="col-auto">
                     <label for="change-city" class="col-form-label">Change your location</label>
                 </div>
                 <div class="col-auto">
-                    <input 
-                    type="text"
-                    class="form-control"
-                    id="search-text-input"
-                    placeholder="Enter city"
-                    autocomplete="off"
-                    autofocus="on">
+                    <input type="text" class="form-control" id="search-text-input" placeholder="Enter city"
+                        autocomplete="off" autofocus="on">
                 </div>
                 <div class="col-auto search-button">
-                    <input
-                    type="submit"
-                    class="btn btn-info w-100"
-                    value="Search"
-                    >
+                    <input type="submit" class="btn btn-info w-100" value="Search">
                 </div>
                 <div class="col-auto">
                     <input type="submit" class="btn btn-info w-100" id="current-button" value="Current Location">
                 </div>
             </div>
         </form>
-       
+
         <footer>
-            <a href="https://github.com/Meerduke/weather-app" class = "open-source-link" target="_blank">Open source code</a>
+            <a href="https://github.com/Meerduke/weather-app" class="open-source-link" target="_blank">Open source
+                code</a>
             by Becca Murdoch
         </footer>
 
     </div>
     <script src="src/index.js"></script>
 </body>
+
 </html>

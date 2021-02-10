@@ -30,10 +30,6 @@ ul {
   list-style: none;
   text-align: center;
   position: relative;
-  top: -100px;
-  right: -190px;
-  margin: 30px;
-  font-size: 15px;
 }
 
 strong {
@@ -51,6 +47,10 @@ footer {
   text-align: center;
   margin: 50px 0 20px 0;
   color: grey;
+}
+
+.temperature {
+  font-weight: lighter;
 }
 
 .forecast {
@@ -76,22 +76,51 @@ footer {
   text-decoration: none;
 }
 
-#current-icon {
-  text-align: right;
-  font-size: 48px;
-  position: relative;
-  top: -70px;
-  left: 480px;
-}
-
-#temperature {
+#current-temperature {
   position: relative;
   top: -65px;
-  right: 60px;
+  right: 50px;
   text-align: right;
-  font-size: 40px;
+  font-size: 35px;
   margin-bottom: 0;
+  text-decoration: none;
   transition: 150ms ease-in-out all;
+  cursor: default;
+}
+
+#celsius-button {
+  color: #008891;
+  text-decoration: none;
+  cursor: default;
+}
+
+#celsius-button:hover {
+  color: #0f3057;
+  cursor: default;
+}
+
+#fahrenheit-button {
+  color: #008891;
+  text-decoration: none;
+  cursor: default;
+}
+
+#fahrenheit-button:hover {
+  color: #0f3057;
+  cursor: default;
+}
+
+#current-icon-date {
+  top: -60px;
+  right: -200px;
+  font-size: 20px;
+}
+
+#weather-conditions {
+  top: -135px;
+  left: -170px;
+  text-align: center;
+  font-size: 20px;
 }
 
 #condition-description {
@@ -100,14 +129,4 @@ footer {
 
 #search-form {
   margin: 0 0 0 -90px;
-}
-
-#celsius-button:hover {
-  color: #0f3057;
-  cursor: pointer;
-}
-
-#fahrenheit-button:hover {
-  color: #0f3057;
-  cursor: pointer;
 }
