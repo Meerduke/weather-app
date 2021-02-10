@@ -53,6 +53,12 @@ footer {
   font-weight: lighter;
 }
 
+.units {
+  font-size: 18px;
+  position: relative;
+  top: -12px;
+}
+
 .forecast {
   position: relative;
   top: -80px;
@@ -79,7 +85,7 @@ footer {
 #current-temperature {
   position: relative;
   top: -65px;
-  right: 50px;
+  right: 75px;
   text-align: right;
   font-size: 35px;
   margin-bottom: 0;
@@ -112,7 +118,7 @@ footer {
 
 #current-icon-date {
   top: -60px;
-  right: -200px;
+  right: -190px;
   font-size: 20px;
 }
 
