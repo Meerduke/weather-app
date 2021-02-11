@@ -60,14 +60,14 @@ function displayCelsius(event){
   temperature.innerHTML = Math.round(celsiusTemperature);
 }
 
-let celsiusTemperature = null;
-let fahrenheitTemperature = null;
-
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
 let currentLocationButton = document.querySelector("#current-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
+let celsiusTemperature = null;
+let fahrenheitTemperature = null;
 
 let fahrenheit = document.querySelector("#fahrenheit-button");
 fahrenheit.addEventListener("click", displayFahrenheit);
@@ -104,8 +104,11 @@ let months = [
 ];
 let month = months[now.getMonth()];
 let hours = now.getHours();
+    if (hours <10){
+    hours = `0${hours}`;
+  }
 let minutes = now.getMinutes();
-  if (minutes <10){
+    if (minutes <10){
     minutes = `0${minutes}`;
   }
 let changeDate = document.querySelector(".current-date-time");
