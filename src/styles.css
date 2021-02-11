@@ -96,6 +96,10 @@ footer {
   cursor: default;
 }
 
+#current-temperature .active {
+  color: #0f3057;
+}
+
 #celsius-button {
   color: #008891;
   text-decoration: none;

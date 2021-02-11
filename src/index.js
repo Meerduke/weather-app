@@ -51,6 +51,10 @@ function getCurrentLocation(event) {
 function displayFahrenheit(event){
   event.preventDefault();
   let temperature = document.querySelector(".temperature");
+
+  celsius.classList.remove("active");
+  fahrenheit.classList.add("active");
+
   let fahrenheitTemperature = (celsiusTemperature * 9)/5+32;
   temperature.innerHTML = Math.round(fahrenheitTemperature);
 }
@@ -58,6 +62,10 @@ function displayFahrenheit(event){
 function displayCelsius(event){
   event.preventDefault();
   let temperature = document.querySelector(".temperature");
+
+  celsius.classList.add("active");
+  fahrenheit.classList.remove("active");
+
   temperature.innerHTML = Math.round(celsiusTemperature);
 }
 
