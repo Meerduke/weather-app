@@ -140,7 +140,6 @@ function formatDate (timestamp){
   "December"
   ];
   let month = months[now.getMonth()];
-  
 return `${day} ${date} ${month} ${formatHours(timestamp)}`;
 
 }
