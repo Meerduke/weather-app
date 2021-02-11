@@ -20,8 +20,11 @@ function showTemperature(response){
 
 function search(city) {
   let apiKey = "aae79086babd8e5274d8186968279eae";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&${units}`;
   axios.get(apiUrl).then(showTemperature);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&${units}`;
+  axios.get(apiUrl).then(showForecast);
 }
 
 function handleSubmit(event){
@@ -39,7 +42,7 @@ function showPosition (position) {
   let lon = position.coords.longitude;
   let cityCount = 1;
   let apiKey = "aae79086babd8e5274d8186968279eae";
-  let currentCityUrl = `https://api.openweathermap.org/data/2.5/find?lat=${lat}&lon=${lon}&cnt=${cityCount}&appid=${apiKey}&units=metric`;
+  let currentCityUrl = `https://api.openweathermap.org/data/2.5/find?lat=${lat}&lon=${lon}&cnt=${cityCount}&appid=${apiKey}&${units}`;
   axios.get(currentCityUrl).then(showCity);
 }
 
@@ -69,6 +72,44 @@ function displayCelsius(event){
   temperature.innerHTML = Math.round(celsiusTemperature);
 }
 
+function formatHours (timestamp){
+  let now = new Date(timestamp);
+  let hours = now.getHours();
+    if (hours <10){
+    hours = `0${hours}`;
+  }
+  let minutes = now.getMinutes();
+    if (minutes <10){
+    minutes = `0${minutes}`;
+  }
+  return `${hours}:${minutes}`;
+}
+
+function showForecast(response){
+  let forecast = null;
+  let forecastElement = document.querySelector(".forecast");
+  forecastElement.innerHTML = null;
+
+  for (let index = 0; index < 5; index++) {
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += `<div class="col-md-auto">
+                                  ${formatHours (forecast.dt * 1000)}
+                                    <br />
+                                  <img
+                                    src = "http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"
+                                    alt = "weather icon"
+                                  />
+                                    <br />
+                                  <span id="first-day">
+                                    ${Math.round(forecast.main.temp_max)}°C | ${Math.round(forecast.main.temp_min)}°C
+                                  </span>
+                              </div>`  
+
+  }
+
+                          
+}
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
@@ -84,6 +125,7 @@ fahrenheit.addEventListener("click", displayFahrenheit);
 let celsius = document.querySelector("#celsius-button");
 celsius.addEventListener("click", displayCelsius);
 
+let units = "units=metric";
 
 let now = new Date();
 let days = [
